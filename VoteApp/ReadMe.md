@@ -27,7 +27,7 @@ Start the server
 
 ```bash
   yarn run dev
-```\
+```
 
 
 
