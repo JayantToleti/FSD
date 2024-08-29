@@ -1,0 +1,45 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9; 
+}
+
+.App {
+  text-align: center;
+  padding: 30px; 
+  background-color: #ffffff; 
+}
+
+.news-feed {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  justify-items: center; 
+}
+
+.article-card {
+  background: linear-gradient(135deg, #726fd9, #60b0c2); 
+  padding: 25px;
+  margin: 0; 
+  border-radius: 12px; 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  width: 90%; 
+  max-width: 400px; 
+}
+
+.article-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.spinner {
+  margin: 30px auto;
+  font-size: 20px; 
+  color: #666; 
+  text-align: center;
+  font-weight: 500; 
+}
