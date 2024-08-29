@@ -58,6 +58,10 @@ Install dependencies
 
 Start the server
 
+```bash
+  yarn run dev
+```
+
 # Questions
 
 ## 1. How would you implement a real-time WebSocket connection to handle voting updates?
@@ -166,14 +170,76 @@ To create a voting interface in React:
      );
    };
    ```
-   
 
 
+## 3. How can you use Chart.js to display real-time voting results in a bar chart?
 
+Setup Chart Component: Create a bar chart that updates dynamically as new votes come in.
 
+```javascript
+import { Bar } from 'react-chartjs-2';
 
-```bash
-  yarn run dev
+const VotingChart = ({ votes }) => {
+  const data = {
+    labels: ['Option A', 'Option B'],
+    datasets: [
+      {
+        label: 'Votes',
+        data: [votes.optionA, votes.optionB],
+        backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)'],
+        borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)'],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  return <Bar data={data} />;
+};
+
+export default VotingChart;
+
 ```
 
+## 4. Explain how you would handle user authentication and restrict users to one vote per topic.
+
+
+To handle user authentication and restrict users to one vote per topic:
+
+1) User Authentication:
+
+-Implement authentication using JWT (JSON Web Tokens) or OAuth.
+-Store the user’s session in a secure cookie or local storage.
+-Require users to log in before they can vote.
+
+2) Vote Restriction:
+
+-Store user votes in a database with a unique identifier (like user ID and topic ID).
+-When a user attempts to vote, check if they’ve already voted on that topic.
+-If they have voted, prevent them from submitting another vote.
+-You can enforce this rule on both the client and server sides for added security.
+
+## 5. What strategies would you use to ensure the reliability and accuracy of the voting results?
+To ensure reliability and accuracy:
+
+Data Validation:
+
+Validate vote data on both the client and server sides to prevent invalid data from being processed.
+Database Integrity:
+
+Use transactions in your database to ensure that votes are accurately recorded without partial writes.
+Implement unique constraints to prevent duplicate votes from being recorded for the same user and topic.
+Audit Logs:
+
+Maintain audit logs of all voting actions, including timestamps, user IDs, and vote details. This helps in tracking and resolving any discrepancies.
+Concurrency Handling:
+
+Use optimistic locking or similar mechanisms to handle concurrent voting attempts, ensuring that the final vote count is consistent.
+Redundancy:
+
+Store vote data in multiple locations (e.g., database replication, backups) to prevent data loss in case of server failures.
+Use a distributed system like Kafka for processing votes in real-time, providing fault tolerance and scalability.
+Monitoring and Alerts:
+
+Set up monitoring tools to track vote processing and alert you to any unusual activity or potential errors.
+By implementing these strategies, you can ensure that the voting results are reliable, accurate, and secure.
 
