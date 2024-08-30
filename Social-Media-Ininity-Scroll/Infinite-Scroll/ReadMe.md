@@ -69,7 +69,7 @@ To implement infinite scrolling in a React component, you can follow these steps
    export default Feed;
 
 
-# 2 Describe how to fetch and display additional posts as the user scrolls.
+## 2. Describe how to fetch and display additional posts as the user scrolls.
 
 -To fetch and display additional posts:
 
@@ -81,7 +81,7 @@ To implement infinite scrolling in a React component, you can follow these steps
 
   Render Posts: Map through the posts array in your JSX to render each post.
 
-# 3 How can you optimize the loading of posts to improve performance and user experience?
+## 3. How can you optimize the loading of posts to improve performance and user experience?
 
 To optimize loading of posts:
 
@@ -97,7 +97,7 @@ Pre-fetching Data: Anticipate the user’s scrolling and pre-fetch data when the
 
 Use a Virtualized List: For very large datasets, consider using libraries like react-window or react-virtualized to only render items that are visible in the viewport.
 
-# 4 Explain how you would handle loading states and display a spinner while new posts are being fetched.
+## 4. Explain how you would handle loading states and display a spinner while new posts are being fetched.
 
 To handle loading states:
 
@@ -107,7 +107,7 @@ Set Loading State: Set loading to true before initiating the API call, and set i
 
 Display a Spinner: Conditionally render a spinner or loading indicator based on the loading state.
 
-# 5  What are the potential challenges with infinite scrolling, and how would you address them?
+## 5.  What are the potential challenges with infinite scrolling, and how would you address them?
 
 Potential Challenges:
 Performance Issues:
