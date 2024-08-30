@@ -67,7 +67,7 @@ To implement infinite scrolling in a React component, you can follow these steps
    };
 
    export default Feed;
-```
+
 
 # 2 Describe how to fetch and display additional posts as the user scrolls.
 
